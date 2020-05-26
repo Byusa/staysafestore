@@ -3,17 +3,24 @@ import { Link } from 'react-router-dom';
 import logo from '../logo.svg';
 import styled from 'styled-components';
 import { ButtonContainer } from './Button';
-import fire from '/Users/sergebyusa/Desktop/Winter 2020/Comp 480/store/src/config/Fire.js';
+import fire from '../config/Fire.js';
 
 
 
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
+    this.logout = this.logout.bind(this);
   }
+
   //logout button
   logout() {
-    fire.auth().signOut();
+    try {
+      fire.auth().signOut();
+    }
+    catch (error) {
+      alert(error.message);
+    }
   }
 
   render() {
@@ -27,13 +34,10 @@ https://www.iconfinder.com/Makoto_msk */}
           <img src={logo} alt="store" className="navbar-brand" />
         </Link>
 
-        <ul className="navbar-nav align-items-center">
-          <li className="nav-item ml-5">
-            <Link to="/" className="nav-link" >
-              products
-            </Link>
-          </li>
-        </ul>
+
+        <Link to="/" className="nav-link" >
+          products
+        </Link>
 
         <Link to='/cart' className="ml-auto">
           <ButtonContainer className="nav-link" >
@@ -44,7 +48,7 @@ https://www.iconfinder.com/Makoto_msk */}
             </ButtonContainer>
         </Link>
 
-        <Link to="/" >
+        <Link to="/Login" >
           <ButtonContainer onClick={this.logout} className="nav-link" >
             <span className="mr-2" >
               <i className="fas fa-sign-out-alt" />

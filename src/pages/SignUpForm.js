@@ -105,7 +105,7 @@ class SignUpForm extends Component {
 
             <button type="submit" onClick={this.signup} className="FormField__Button mr-20"> Sign up </button>
 
-            <Link to="/sign-in" className="FormField__Link"> I'm already member </Link>
+            <Link to="/SignIn" className="FormField__Link"> I'm already member </Link>
           </div>
 
         </form>

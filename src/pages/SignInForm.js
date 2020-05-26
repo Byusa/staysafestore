@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import fire from '/Users/sergebyusa/Desktop/Winter 2020/Comp 480/store/src/config/Fire.js';
+import fire from '../config/Fire.js';
 
 
 class SignInForm extends Component {
@@ -18,7 +18,9 @@ class SignInForm extends Component {
     login(e) {
         e.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
-
+            this.props.history.push({
+                pathname: '/',
+            });
         }).catch((error) => {
             alert(error.message);
         });
@@ -31,7 +33,7 @@ class SignInForm extends Component {
 
     render() {
         return (
-            <div className="FormCenter">
+            <div className="FormCenter" history={this.props.history}>
 
                 <form onSubmit={this.handleSubmit} className="FormFields">
 
@@ -49,15 +51,11 @@ class SignInForm extends Component {
                         />
                     </div>
 
-
-                    <div className="FormField">
-
-                        <button type="submit" onClick={this.login} className="FormField__Button mr-20"> Sign In </button>
-
-                        <Link to="/" className="FormField__Link">Create an account </Link>
-                    </div>
-
+                    <button type="submit" onClick={this.login} className="FormField__Button mr-20"> Sign In </button>
                 </form >
+
+                <Link to="/SignUP" className="FormField__Link">Create an account </Link>
+
             </div >
         );
     }
