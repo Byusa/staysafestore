@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import fire from '../config/Fire.js';
+import { BrowserRouter as Router, Switch, withRouter, Route } from 'react-router-dom';
 
 
 class SignInForm extends Component {
@@ -19,12 +20,14 @@ class SignInForm extends Component {
         e.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
             this.props.history.push({
-                pathname: '/',
+                pathname: '/ProdcutList',
             });
         }).catch((error) => {
             alert(error.message);
         });
     }
+
+
 
 
     handleChange(e) {
@@ -33,6 +36,7 @@ class SignInForm extends Component {
 
     render() {
         return (
+
             <div className="FormCenter" history={this.props.history}>
 
                 <form onSubmit={this.handleSubmit} className="FormFields">
@@ -52,13 +56,15 @@ class SignInForm extends Component {
                     </div>
 
                     <button type="submit" onClick={this.login} className="FormField__Button mr-20"> Sign In </button>
-                </form >
 
-                <Link to="/SignUP" className="FormField__Link">Create an account </Link>
+
+                    <Link to="/SignUP" className="FormField__Link">Create an account </Link>
+
+                </form >
 
             </div >
         );
     }
 }
 
-export default SignInForm;
+export default withRouter(SignInForm);

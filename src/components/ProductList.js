@@ -3,6 +3,7 @@ import Product from './Product';
 import Title from './Title';
 import { ProductConsumer } from '../context';
 import Navbar from './Navbar';
+import Searchbar from './Searchbar';
 
 
 export default class ProductList extends Component {
@@ -16,12 +17,17 @@ export default class ProductList extends Component {
                     <div className="container">
                         <Title name="our " title="products" />
 
+                       {/*<Searchbar />*/ /*I will add the search bar later*/} 
+
                         <div className="row">
                             <ProductConsumer>
                                 {value => {
                                     return value.products.map(product => {
-                                        return <Product key={product.id}
-                                            product={product} />
+                                        return (
+                                            <Product 
+                                            key={product.id}
+                                            product={product} 
+                                            />)
                                     })
                                 }}
                             </ProductConsumer>

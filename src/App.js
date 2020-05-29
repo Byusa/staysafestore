@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import fire from './config/Fire';
 import Home from './Home';
-import Login from './Login';
 import ProdcutList from './components/ProductList';
 import Details from './components/Details';
 import Cart from './components/Cart';
 import Modal from './components/Modal';
-import SignUpForm from './pages/SignUpForm';
-import SignInForm from './pages/SignInForm';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -52,16 +51,13 @@ class App extends Component {
     return (
       <div>
         <Router>
-
-
           <Switch>
-            <Route exact path="/" component={ProdcutList} />
+            <Route exact path="/" component={SignIn} />
+            <Route exact path="/SignUP" component={SignUp} />
+            <Route exact path="/ProdcutList" component={ProdcutList} />
             <Route exact path="/details" component={Details} />
             <Route exact path="/cart" component={Cart} />
-            <Route exact path="/Login" component={Login} />
             <Route exact path="/Home" component={Home} />
-            <Route exact path="/SignUP" component={SignUpForm}/>
-            <Route path="/SignIn" component={SignInForm}/>
           </Switch>
 
           <Modal />

@@ -30,12 +30,12 @@ export default class Navbar extends Component {
 https://www.iconfinder.com/icons/1243689/call_phone_icon
 Creative Commons (Attribution 3.0 Unported);
 https://www.iconfinder.com/Makoto_msk */}
-        <Link to='/'>
+        <Link to='/ProdcutList'>
           <img src={logo} alt="store" className="navbar-brand" />
         </Link>
 
 
-        <Link to="/" className="nav-link" >
+        <Link to="/ProdcutList" className="nav-link" >
           products
         </Link>
 
@@ -48,7 +48,7 @@ https://www.iconfinder.com/Makoto_msk */}
             </ButtonContainer>
         </Link>
 
-        <Link to="/Login" >
+        <Link to="/" >
           <ButtonContainer onClick={this.logout} className="nav-link" >
             <span className="mr-2" >
               <i className="fas fa-sign-out-alt" />

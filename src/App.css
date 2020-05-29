@@ -192,3 +192,71 @@ body {
   margin-left: 5px;
 }
 
+
+.PayConnectbox {
+  position: absolute;
+  width: 33%;
+  height: 5%;
+  left: 35.5%;
+  top: 25%;
+
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: #10377A;
+}
+
+.AppTitle {
+  position: absolute;
+  width: 20%;
+  height: 10%;
+  left: 45%;
+  top: 17%;
+
+
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 120%;
+  line-height: 100%;
+
+/* identical to box height, or 94% */
+
+  display: flex;
+  align-items: center;
+
+  color: #2E4158;
+}
+
+.InstitutionSearch {
+  top: 17%;
+  width: 40%;
+}
+
+.PayConnectTable {
+  left: 35%;
+  top: 35%;
+  position: absolute;
+  width: 50%;
+
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: #2E4158;
+}
+
+.PayConnectSearchButton {
+  left: 69%;
+  top: 25%;
+  position: absolute;
+  width: 10%;
+  height: 5%;
+
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: #2E4158;
+}

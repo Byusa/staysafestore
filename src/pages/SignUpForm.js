@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import fire from '/Users/sergebyusa/Desktop/Winter 2020/Comp 480/store/src/config/Fire.js';
+import fire from '../config/Fire.js';
+import { BrowserRouter as Router, Switch, withRouter, Route } from 'react-router-dom';
+
 
 
 class SignUpForm extends Component {
 
-    constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
-        this.signup = this.signup.bind(this);
-        this.state = {
-            email: '',
-            password: ''
-        }
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.signup = this.signup.bind(this);
+    this.state = {
+      email: '',
+      password: ''
     }
+  }
 
   signup(e) {
     e.preventDefault();
-    fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .catch((error) => {
-        alert(error.message);
+    fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
+      this.props.history.push({
+        pathname: '/ProdcutList',
+      });
+    }).catch((error) => {
+      alert(error.message);
     })
   }
 
@@ -105,7 +110,7 @@ class SignUpForm extends Component {
 
             <button type="submit" onClick={this.signup} className="FormField__Button mr-20"> Sign up </button>
 
-            <Link to="/SignIn" className="FormField__Link"> I'm already member </Link>
+            <Link to="/" className="FormField__Link"> I'm already member </Link>
           </div>
 
         </form>
@@ -114,4 +119,4 @@ class SignUpForm extends Component {
   }
 }
 
-export default SignUpForm;
+export default withRouter(SignUpForm);

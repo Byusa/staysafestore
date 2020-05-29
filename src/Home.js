@@ -26,7 +26,7 @@ class Home extends Component {
         <Navbar />
 
         <Switch>
-          <Route exact path="/" component={ProdcutList} />
+          <Route exact path="/ProdcutList" component={ProdcutList} />
           <Route path="/details" component={Details} />
           <Route path="/cart" component={Cart}/>
 
