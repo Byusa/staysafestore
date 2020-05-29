@@ -8,7 +8,7 @@ import Details from './components/Details';
 import Cart from './components/Cart';
 import Default from './components/Default';
 import Modal from './components/Modal';
-import fire from '/Users/sergebyusa/Desktop/Winter 2020/Comp 480/store/src/config/Fire.js';
+import fire from './config/Fire.js';
 
 
 class Home extends Component {
